@@ -55,7 +55,7 @@ else:
 
     st.subheader("Volatility")
     st.bar_chart(vol)
-    # trying small change
+
     # rolling volatility
     st.subheader("Rolling Volatility (30 days)")
     roll_vol = returns.rolling(30).std() * np.sqrt(252)
@@ -68,7 +68,7 @@ else:
     fig, ax = plt.subplots()
     sns.heatmap(corr, annot=True, ax=ax)
     st.pyplot(fig)
-    # checking charts
+
     # simple report button
     if st.button("Generate Report"):
         st.write("Portfolio Value:", value)

@@ -25,11 +25,13 @@ else:
     returns = data.pct_change().dropna()
 
     # portfolio return (equal weight)
-    portfolio_return = returns.mean(axis=1)
+portfolio_return = returns.mean(axis=1)
 
-    # basic metrics
+if portfolio_return.empty:
+    st.error("No data available. Try changing time period.")
+else:
     total_return = (1 + portfolio_return).prod() - 1
-    daily_return = portfolio_return.iloc[-1]
+    daily_return = portfolio_return.iloc[-1]   
 
     sharpe = (portfolio_return.mean() / portfolio_return.std()) * np.sqrt(252)
     var95 = np.percentile(portfolio_return, 5)

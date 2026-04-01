@@ -55,7 +55,7 @@ else:
 
     st.subheader("Volatility")
     st.bar_chart(vol)
-
+    # trying small change
     # rolling volatility
     st.subheader("Rolling Volatility (30 days)")
     roll_vol = returns.rolling(30).std() * np.sqrt(252)

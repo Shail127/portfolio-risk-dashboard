@@ -68,7 +68,7 @@ else:
     fig, ax = plt.subplots()
     sns.heatmap(corr, annot=True, ax=ax)
     st.pyplot(fig)
-
+    # checking charts
     # simple report button
     if st.button("Generate Report"):
         st.write("Portfolio Value:", value)

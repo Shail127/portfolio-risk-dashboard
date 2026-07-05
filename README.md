@@ -1,16 +1,81 @@
 # Portfolio Risk Analysis Dashboard
 
 ## About the Project
-This is a project where I analyzed stock portfolio risk using Python.
+Portfolio Risk Dashboard is an interactive financial analytics application built using Python and Streamlit. It allows users to analyze the performance and risk of a stock portfolio using historical market data from Yahoo Finance.
 
-## What I did
-- Collected stock data using yfinance
-- Calculated returns and risk
-- Built a dashboard using Streamlit
+The dashboard includes portfolio performance metrics, risk measures, benchmark comparison, and interactive visualizations.
 
-## Tools Used
-Python, Pandas, NumPy, Streamlit
+##Features
+Select multiple US stocks
+Add custom stock tickers
+Equal-weight and custom-weight portfolios
+Portfolio value tracking
+Total and annualized returns
+Annualized volatility
+Sharpe Ratio
+Value at Risk (VaR 95%)
+Maximum Drawdown
+Portfolio allocation visualization
+Benchmark comparison (S&P 500, NASDAQ, Dow Jones)
+Rolling volatility analysis
+Correlation heatmap
+Individual stock performance
+Downloadable portfolio report (CSV)
 
-## How to Run
+##Dataset
+
+Historical daily stock prices are collected using Yahoo Finance (yfinance).
+
+Default companies included:
+Apple (AAPL)
+Amazon (AMZN)
+Google (GOOGL)
+Johnson & Johnson (JNJ)
+JPMorgan Chase (JPM)
+Microsoft (MSFT)
+NVIDIA (NVDA)
+Procter & Gamble (PG)
+Exxon Mobil (XOM)
+
+##Technologies Used
+Python
+Streamlit
+Pandas
+NumPy
+Matplotlib
+Seaborn
+Yahoo Finance API (yfinance)
+
+##Performance Metrics
+The dashboard computes:
+Portfolio Return
+Portfolio Value
+Annualized Return
+Annualized Volatility
+Sharpe Ratio
+Value at Risk (VaR 95%)
+Maximum Drawdown
+
+##Visualizations
+Stock Price Trends
+Portfolio Allocation
+Portfolio vs Benchmark
+Cumulative Portfolio Return
+Rolling Volatility
+Correlation Matrix
+Annualized Volatility
+Individual Stock Performance
+
+##Installation
 pip install -r requirements.txt
+
+##Run the Project
 streamlit run app.py
+
+##Future Improvements
+Portfolio Optimization (Maximum Sharpe Ratio)
+Efficient Frontier
+Monte Carlo Portfolio Simulation
+CAPM (Beta & Alpha)
+Expected Shortfall (CVaR)
+Interactive Plotly Visualizations

@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import plotly.express as px
 
 st.set_page_config(page_title="Portfolio Risk Dashboard", layout="wide")
 st.title("📊 Portfolio Risk Dashboard")
@@ -141,7 +142,21 @@ if benchmark!="None":
             "Benchmark":(1+bm_ret).cumprod()
         }).dropna()
         st.subheader("Portfolio vs Benchmark")
-        st.line_chart(compare)
+
+fig = px.line(
+    compare,
+    x=compare.index,
+    y=compare.columns,
+    title="Portfolio vs Benchmark"
+)
+
+fig.update_layout(
+    xaxis_title="Date",
+    yaxis_title="Cumulative Return",
+    hovermode="x unified"
+)
+
+st.plotly_chart(fig, use_container_width=True)
 
 st.subheader("Portfolio Allocation")
 if weighting=="Custom Weight" and weights:
@@ -154,21 +169,78 @@ ax.pie(alloc,labels=alloc.index,autopct="%1.1f%%",startangle=90)
 st.pyplot(fig)
 
 st.subheader("Stock Prices")
-st.line_chart(prices)
+
+fig = px.line(
+    prices,
+    x=prices.index,
+    y=prices.columns,
+    title="Stock Prices"
+)
+
+fig.update_layout(
+    xaxis_title="Date",
+    yaxis_title="Price ($)",
+    hovermode="x unified"
+)
+
+st.plotly_chart(fig, use_container_width=True)
 
 st.subheader("Cumulative Portfolio Return")
-st.line_chart((1+portfolio).cumprod())
+
+cum_return = (1 + portfolio).cumprod()
+
+fig = px.line(
+    x=cum_return.index,
+    y=cum_return.values,
+    labels={"x": "Date", "y": "Portfolio Value"},
+    title="Cumulative Portfolio Return"
+)
+
+fig.update_layout(hovermode="x unified")
+
+st.plotly_chart(fig, use_container_width=True)
 
 st.subheader("Individual Stock Performance")
-st.line_chart((1+returns).cumprod())
+
+performance = (1 + returns).cumprod()
+
+fig = px.line(
+    performance,
+    x=performance.index,
+    y=performance.columns,
+    title="Individual Stock Performance"
+)
+
+fig.update_layout(
+    xaxis_title="Date",
+    yaxis_title="Growth",
+    hovermode="x unified"
+)
+
+st.plotly_chart(fig, use_container_width=True)
 
 st.subheader("Annualized Volatility")
 vol=returns.std()*np.sqrt(252)
 st.bar_chart(vol)
 
 st.subheader("Rolling Volatility (30 Days)")
-roll=returns.rolling(30).std()*np.sqrt(252)
-st.line_chart(roll)
+
+roll = returns.rolling(30).std() * np.sqrt(252)
+
+fig = px.line(
+    roll,
+    x=roll.index,
+    y=roll.columns,
+    title="Rolling Volatility"
+)
+
+fig.update_layout(
+    xaxis_title="Date",
+    yaxis_title="Volatility",
+    hovermode="x unified"
+)
+
+st.plotly_chart(fig, use_container_width=True)
 
 st.subheader("Portfolio Drawdown")
 st.area_chart(drawdown)
@@ -219,4 +291,3 @@ st.download_button(
     "portfolio_report.csv",
     "text/csv"
 )
-

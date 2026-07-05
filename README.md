@@ -1,77 +1,107 @@
-# Portfolio Risk Analysis Dashboard
+# 📊 Portfolio Risk Dashboard
 
-## About the Project
-Portfolio Risk Dashboard is an interactive financial analytics application built using Python and Streamlit. It allows users to analyze the performance and risk of a stock portfolio using historical market data from Yahoo Finance.
+This project is a portfolio risk analysis dashboard built using Python and Streamlit. It helps users analyze the performance and risk of a stock portfolio using historical stock prices from Yahoo Finance.
 
-The dashboard includes portfolio performance metrics, risk measures, benchmark comparison, and interactive visualizations.
+The dashboard allows users to compare different stocks, view portfolio performance, calculate risk metrics, and generate a simple portfolio report.
 
-##Features
-- Select multiple US stocks
+## Features
+
+- Select multiple stocks for portfolio analysis
 - Add custom stock tickers
-- Equal-weight and custom-weight portfolios
-- Portfolio value tracking
-- Annualized Return
-- Annualized Volatility
+- Equal weight and custom weight portfolio allocation
+- Portfolio value calculation
+- Total return and annualized return
+- Annualized volatility
 - Sharpe Ratio
-- Value at Risk (VaR 95%)
+- Value at Risk (VaR)
 - Maximum Drawdown
-- Benchmark Comparison
+- Portfolio allocation pie chart
+- Portfolio vs benchmark comparison
+- Rolling volatility
+- Correlation matrix
+- Download portfolio report as CSV
+
+## Dataset
+
+The stock price data is collected using the **Yahoo Finance API (yfinance)**.
+
+The dashboard includes the following companies by default:
+
+- Apple (AAPL)
+- Amazon (AMZN)
+- Google (GOOGL)
+- Microsoft (MSFT)
+- NVIDIA (NVDA)
+- JPMorgan Chase (JPM)
+- Johnson & Johnson (JNJ)
+- Procter & Gamble (PG)
+- Exxon Mobil (XOM)
+
+## Tools Used
+
+- Python
+- Streamlit
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- yfinance
+
+
+## Dashboard Includes
+
+- Portfolio Summary
+- Stock Price Trends
+- Portfolio Allocation
+- Portfolio vs Benchmark
+- Individual Stock Performance
+- Annualized Volatility
+- Rolling Volatility
 - Correlation Heatmap
-- Downloadable CSV Report
+- Portfolio Report
 
-##Dataset
-Historical daily stock prices are collected using Yahoo Finance (yfinance).
 
-Default companies included:
--Apple (AAPL)
--Amazon (AMZN)
--Google (GOOGL)
--Johnson & Johnson (JNJ)
--JPMorgan Chase (JPM)
--Microsoft (MSFT)
--NVIDIA (NVDA)
--Procter & Gamble (PG)
--Exxon Mobil (XOM)
+## How to Run
 
-##Technologies Used
--Python
--Streamlit
--Pandas
--NumPy
--Matplotlib
--Seaborn
--Yahoo Finance API (yfinance)
+Install the required libraries
 
-##Performance Metrics
--The dashboard computes:
--Portfolio Return
--Portfolio Value
--Annualized Return
--Annualized Volatility
--Sharpe Ratio
--Value at Risk (VaR 95%)
--Maximum Drawdown
-
-##Visualizations
--Stock Price Trends
--Portfolio Allocation
--Portfolio vs Benchmark
--Cumulative Portfolio Return
--Rolling Volatility
--Correlation Matrix
--Annualized Volatility
--Individual Stock Performance
-
-##Installation
+```bash
 pip install -r requirements.txt
+```
 
-##Run the Project
+Run the application
+
+```bash
 streamlit run app.py
+```
 
-##Future Improvements
--Portfolio Optimization (Maximum Sharpe Ratio)
--Efficient Frontier
--Monte Carlo Portfolio Simulation
--CAPM (Beta & Alpha)
--Expected Shortfall (CVaR)
--Interactive Plotly Visualizations
+---
+
+## Project Structure
+
+```
+portfolio-risk-dashboard/
+│
+├── app.py
+├── requirements.txt
+└── README.md
+```
+
+
+## Future Improvements
+
+Some features I would like to add in the future:
+
+- Portfolio optimization
+- Monte Carlo simulation
+- Efficient Frontier
+- CAPM (Beta and Alpha)
+- Plotly interactive charts
+
+## Author
+
+Shail Singh
+
+M.Sc. Statistics
+
+Interested in Data Science, Machine Learning, and Risk Analytics.
